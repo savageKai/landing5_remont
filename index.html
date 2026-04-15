@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ремонт Профи | Качественный ремонт квартир</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: #F8FAFE;
+            color: #1E293B;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #0F2B4F;
+        }
+        h2:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #1E3A8A;
+            margin: 0.75rem auto 0;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1E3A8A;
+            color: white;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(30,58,138,0.3);
+        }
+        .btn:hover {
+            background-color: #152E6B;
+            transform: translateY(-2px);
+        }
+
+        /* Шапка */
+        .header {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(6px);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1E3A8A;
+        }
+
+        /* Услуги */
+        .services {
+            padding: 70px 0 60px;
+            background: #F8FAFE;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            text-align: center;
+            padding-bottom: 28px;
+            transition: 0.2s;
+            border: 1px solid #E2EDF7;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(30,58,138,0.1);
+        }
+        .service-img {
+            background: #EFF4FA;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            color: #1E3A8A;
+        }
+        .service-img span {
+            background: white;
+            padding: 6px 20px;
+            border-radius: 40px;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+            color: #0F2B4F;
+        }
+
+        /* О нас */
+        .about {
+            background: white;
+            padding: 60px 0;
+            border-top: 1px solid #E9F0F8;
+            border-bottom: 1px solid #E9F0F8;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #F9FCFE;
+            padding: 36px 32px;
+            border-radius: 40px;
+            text-align: center;
+        }
+        .about-content p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        /* Форма */
+        .form-section {
+            padding: 70px 0 80px;
+            background: #F8FAFE;
+        }
+        .form-card {
+            max-width: 560px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 48px;
+            padding: 36px 40px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+            border: 1px solid #DBEAFE;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-group label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #CFDFF0;
+            border-radius: 60px;
+            font-size: 1rem;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #1E3A8A;
+            box-shadow: 0 0 0 3px rgba(30,58,138,0.15);
+        }
+        .form-section .btn {
+            width: 100%;
+            padding: 14px;
+        }
+
+        /* Подвал */
+        .footer {
+            background: #0F172A;
+            color: #C9D9F0;
+            padding: 28px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .form-card {
+                padding: 28px 20px;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">🔨 Ремонт Профи</div>
+        <a href="#repairForm" class="btn">Рассчитать стоимость</a>
+    </div>
+</header>
+
+<main>
+    <!-- Услуги -->
+    <section class="services">
+        <div class="container">
+            <h2>Виды ремонта</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img"><span>🎨 Косметический</span></div>
+                    <h3>Косметический ремонт</h3>
+                    <p>Покраска стен, поклейка обоев, замена плинтусов. Освежим интерьер за 5–7 дней.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-img"><span>🏗️ Капитальный</span></div>
+                    <h3>Капитальный ремонт</h3>
+                    <p>Полная перепланировка, стяжка, электропроводка, сантехника — «под ключ».</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-img"><span>📐 Дизайн</span></div>
+                    <h3>Дизайн интерьера</h3>
+                    <p>Разработка 3D-проекта и визуализация. Стильное и функциональное пространство.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>О компании</h2>
+                <p>🏠 «Ремонт Профи» — 8 лет на рынке. Мы делаем ремонт квартир, домов и офисов с гарантией до 3 лет. Используем только проверенные материалы.</p>
+                <p>📐 Индивидуальный подход, смета без скрытых платежей и строгий контроль качества. Более 700 сданных объектов.</p>
+                <p>🤝 Ваша уверенность — наша репутация. Оставьте заявку, и мы обсудим детали будущего ремонта.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section id="repairForm" class="form-section">
+        <div class="container">
+            <div class="form-card">
+                <h2>Оставить заявку</h2>
+                <form id="repairFormElement">
+                    <div class="form-group">
+                        <label>Имя</label>
+                        <input type="text" id="userName" placeholder="Анна" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" id="userPhone" placeholder="+7 (999) 456-78-90" required>
+                    </div>
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 «Ремонт Профи». Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('repairFormElement').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let name = document.getElementById('userName').value.trim();
+        let phone = document.getElementById('userPhone').value.trim();
+        if (!name || !phone) alert('Заполните имя и телефон');
+        else alert(`${name}, спасибо! Мы свяжемся с вами для консультации по ремонту.`);
+    });
+</script>
+</body>
+</html>
